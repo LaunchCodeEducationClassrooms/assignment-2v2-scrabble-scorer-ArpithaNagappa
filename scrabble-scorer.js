@@ -92,7 +92,25 @@ function vowelBonusScore(word) {
 	return vowelBonusScore;
  }
 
-let scrabbleScore;
+//let scrabbleScore;
+function scrabbleScore(word) {
+	word = word.toLowerCase();
+	//let letterPoints = "";
+  let letterPoints=0;
+ 
+	for (let i = 0; i < word.length; i++) {
+ 
+	  for (const pointValue in newPointStructure) {
+ 
+		 if (newPointStructure[pointValue].includes(word[i])) {
+			//letterPoints += `Points for '${word[i]}': ${pointValue}\n`
+      letterPoints += Number(pointValue);
+		 }
+ 
+	  }
+	}
+	return letterPoints;
+ }
 
 const scoringAlgorithms = [
   ['Simple Score','Each letter is worth 1 point.','oldScrabbleScorer'],['Bonus Vowels','	Vowels are 3 pts, consonants are 1 pt.','simpleScore'],['Scrabble','The traditional scoring algorithm.','vowelBonusScore']
@@ -116,7 +134,7 @@ function scorerPrompt(word) {
   }
   else if (response == 2)
   {
-    score = oldScrabbleScorer(word);
+    score = scrabbleScore(word);
   }
   console.log(`Score for '${word}': ${score}`);
 }
