@@ -41,13 +41,13 @@ function initialPrompt() {
    return response;
 };
 
-let simpleScore;
+//let simpleScore;
 
 const simplePointStructure = {
   1: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 };
 
-function simpleScorer(word) {
+function simpleScore(word) {
 	word = word.toUpperCase();
 	//let simpleScore = "";
   let simpleScore=0;
@@ -66,14 +66,14 @@ function simpleScorer(word) {
 	return simpleScore;
  }
 
-let vowelBonusScore;
+//let vowelBonusScore;
 
 const vowelPointStructure = {
   1: ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'],
   3: ['A', 'E', 'I', 'O', 'U']
 };
 
-function vowelBonusScorer(word) {
+function vowelBonusScore(word) {
 	word = word.toUpperCase();
 	//let vowelBonusScore = "";
   let vowelBonusScore=0;
@@ -108,17 +108,17 @@ function scorerPrompt(word) {
   let response = input.question("Enter 0, 1, or 2: ");
   if (response == 0)
   {
-    score = simpleScorer(word);
+    score = simpleScore(word);
   }
   else if (response == 1)
   {
-    score = vowelBonusScorer(word);
+    score = vowelBonusScore(word);
   }
   else if (response == 2)
   {
     score = oldScrabbleScorer(word);
   }
-  console.log("Score for 'coconut': "+score);
+  console.log(`Score for '${word}': ${score}`);
 }
 
 
