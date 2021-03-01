@@ -185,7 +185,7 @@ function transform(key)
  
 	  }
 	
-	return letterPoints;
+	return key;
 };
 
 
