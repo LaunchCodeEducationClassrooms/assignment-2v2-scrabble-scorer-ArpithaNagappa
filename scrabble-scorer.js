@@ -114,10 +114,13 @@ function scrabbleScore(word) {
  }
 
 let scoringAlgorithms = [
-{name: 'Simple Score', description: 'Each letter is worth 1 point.',scoringFunction: 'simpleScore()'},
-{name: 'Bonus Vowels',description: 'Vowels are 3 pts, consonants are 1 pt.',scoringFunction: 'vowelBonusScore()'},
-{name: 'Scrabble',description: 'The traditional scoring algorithm.',scoringFunction: 'scrabbleScore()'}
+{name: 'Simple Score', description: 'Each letter is worth 1 point.',scoringFunction: simpleScore},
+{name: 'Bonus Vowels',description: 'Vowels are 3 pts, consonants are 1 pt.',scoringFunction: vowelBonusScore},
+{name: 'Scrabble',description: 'The traditional scoring algorithm.',scoringFunction: scrabbleScore}
 ];
+
+console.log("algorithm name: ", scoringAlgorithms[0].name);
+console.log("scorerFunction result: ", scoringAlgorithms[0].scoringFunction("JavaScript"));
 
 function scorerPrompt(word) {
   let score;
