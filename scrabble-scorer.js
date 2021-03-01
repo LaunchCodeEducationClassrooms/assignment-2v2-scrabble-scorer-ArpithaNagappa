@@ -24,7 +24,7 @@ function oldScrabbleScorer(word) {
  
 		 if (oldPointStructure[pointValue].includes(word[i])) {
 			//letterPoints += `Points for '${word[i]}': ${pointValue}\n`
-      letterPoints += transform(word[i]);
+      letterPoints += Number(pointValue);
       
 		 }
  
@@ -98,14 +98,14 @@ function scrabbleScore(word) {
 	word = word.toLowerCase();
 	//let letterPoints = "";
   let letterPoints=0;
- 
+  let transformedLetter;
 	for (let i = 0; i < word.length; i++) {
  
 	  for (const pointValue in newPointStructure) {
  
 		 if (pointValue==word[i]) {
 			//letterPoints += `Points for '${word[i]}': ${pointValue}\n`
-      letterPoints += transform(word[i]);
+      letterPoints += newPointStructure[word[i]];
 		 }
  
 	  }
@@ -176,12 +176,12 @@ function transform(key)
 	//let letterPoints = "";
   let letterPoints=0;	
  
-	  for (const pointValue in newPointStructure) {
+	  for (const pointValue in key) {
  
-	   if (key == pointValue)
-     {
-       letterPoints += newPointStructure[key];
-     }
+	   //if (key == pointValue)
+     //{
+       //letterPoints += newPointStructure[key];
+     //}
  
 	  }
 	
