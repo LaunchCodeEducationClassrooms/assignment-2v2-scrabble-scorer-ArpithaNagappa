@@ -170,13 +170,14 @@ let newPointStructure = {
 
 //let newPointStructure;
 
-function transform(key) 
+function transform(oldObject) 
 {
   //key = key.toLowerCase();
 	let letterPoints = "";
   //let letterPoints=0;	
+  let newObject = {}
  
-	  for (const pointValue in key) {
+	  for (const pointValue in oldObject) {
  
 	   //if (key == pointValue)
      //{
@@ -185,7 +186,7 @@ function transform(key)
  
 	  }
 	
-	return letterPoints;
+	return newObject;
 };
 
 
