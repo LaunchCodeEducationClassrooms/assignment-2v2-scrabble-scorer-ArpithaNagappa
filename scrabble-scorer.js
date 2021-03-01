@@ -25,6 +25,7 @@ function oldScrabbleScorer(word) {
 		 if (oldPointStructure[pointValue].includes(word[i])) {
 			//letterPoints += `Points for '${word[i]}': ${pointValue}\n`
       letterPoints += transform(word[i]);
+      
 		 }
  
 	  }
@@ -102,9 +103,9 @@ function scrabbleScore(word) {
  
 	  for (const pointValue in newPointStructure) {
  
-		 if (newPointStructure[pointValue].includes(word[i])) {
+		 if (pointValue==word[i]) {
 			//letterPoints += `Points for '${word[i]}': ${pointValue}\n`
-      letterPoints += Number(pointValue);
+      letterPoints += transform(word[i]);
 		 }
  
 	  }
@@ -140,7 +141,7 @@ function scorerPrompt(word) {
 }
 
 
-const newPointStructure = {
+let newPointStructure = {
   a: 1,
   b: 3,
   c: 3,
