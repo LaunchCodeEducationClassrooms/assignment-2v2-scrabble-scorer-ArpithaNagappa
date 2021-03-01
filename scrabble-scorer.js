@@ -116,7 +116,7 @@ function scrabbleScore(word) {
 const scoringAlgorithms = [
 ['Simple Score', 'Bonus Vowels','Scrabble'],
 ['Each letter is worth 1 point.','Vowels are 3 pts, consonants are 1 pt.','The traditional scoring algorithm.'],
-['simpleScore','vowelBonusScore','scrabbleScore']
+['simpleScore()','vowelBonusScore()','scrabbleScore()']
 ];
 
 function scorerPrompt(word) {
